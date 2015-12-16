@@ -1,4 +1,11 @@
-FROM alpine:latest
-MAINTAINER "Aleksandr Derbenev <ya.alex-ac@yandex.com>"
-RUN apk --update add haproxy && rm /var/cache/apk/*
+FROM xtremxpert/docker-alpine:latest
+
+RUN apk -U upgrade && \
+	apk --update add \
+		haproxy \
+	&& \
+	rm /var/cache/apk/*
+
+VOLUME ["/etc/haproxy"]	
+	
 CMD [ "/usr/sbin/haproxy", "-f", "/etc/haproxy/haproxy.cfg", "-db" ]
