@@ -10,5 +10,4 @@ RUN apk -U upgrade && \
 
 VOLUME ["/etc/haproxy"]
 
->>>>>>> origin/master
 CMD [ "/usr/sbin/haproxy", "-f", "/etc/haproxy/haproxy.cfg", "-db" ]
