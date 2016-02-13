@@ -18,7 +18,9 @@ RUN apk update && \
 	apk update && \
 	apk add \
 		ca-certificates \
+		dnsmasq \
 		haproxy \
+		inotify-tools \
 		mc \
 		nano \
 		openntpd \
